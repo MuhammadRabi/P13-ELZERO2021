@@ -1,0 +1,55 @@
+//animations
+
+@keyframes change-backgrounds {
+  0%,
+  100% {
+    background-image: url(../assets/img/discount-background1.jpg);
+  }
+  50%,
+  30% {
+    background-image: url(../assets/img/discount-background2.jpg);
+  }
+}
+
+@keyframes moving-arrow {
+  100% {
+    transform: translatex(5px);
+  }
+}
+
+@keyframes up-and-down {
+  0%,
+  100% {
+    top: 0;
+  }
+  50% {
+    top: -50px;
+  }
+}
+
+@keyframes bouncing {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40%,
+  60% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes flashing {
+  0%,
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+  }
+}

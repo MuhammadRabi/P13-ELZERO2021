@@ -1,0 +1,79 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* ======================================
+header 
+====================================== */
+header {
+  &.fixed-nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ddd;
+  }
+  .container {
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+      .logo {
+        color: var(--main-service-color);
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        flex: 0.25;
+        height: 62px;
+        @extend %flex-center;
+      }
+      .nav__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0.5;
+        .nav__item {
+          .nav__link {
+            height: 62px;
+            line-height: 62px;
+            padding: 0 25px;
+            position: relative;
+            transition: 0.2s ease-in-out;
+            &:hover {
+              color: var(--main-service-color);
+            }
+            &:before {
+              height: 3px;
+              background-color: var(--main-service-color);
+            }
+            &:before,
+            &:after {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 0;
+              transition: 0.2s ease-in-out;
+            }
+
+            &:after {
+              height: 100%;
+              background-color: rgb(0 0 0 / 1%);
+              z-index: -1;
+            }
+            &:hover:after,
+            &:hover:before {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

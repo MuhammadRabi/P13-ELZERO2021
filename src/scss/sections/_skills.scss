@@ -1,0 +1,58 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* ======================================
+         skills section
+====================================== */
+
+.skills {
+  .container {
+    @extend %flex-center;
+    img {
+      width: 450px;
+      margin-right: 100px;
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+    }
+    .skills-content {
+      flex: 1;
+      padding: 10px 5px;
+      @include media-breakpoint-up(md) {
+        padding: 10px 45px;
+      }
+      .skill {
+        h3 {
+          padding: 0;
+          color: #000;
+          display: flex;
+          justify-content: space-between;
+          span {
+            border: 1px solid #c9c1c1;
+            padding: 2px 4px;
+            font-size: 14px;
+            border-radius: 2px;
+            color: var(--main-service-color);
+          }
+        }
+        .progress {
+          margin: 15px 0;
+          height: 30px;
+          background-color: #e9e9e9;
+          position: relative;
+          span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 30%;
+            background-color: var(--main-service-color);
+          }
+        }
+      }
+    }
+  }
+}

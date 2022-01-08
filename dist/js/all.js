@@ -1,0 +1,2 @@
+const header=document.querySelector("header");function addFixedHeader(){window.scrollY>600?header.classList.add("fixed-nav"):header.classList.remove("fixed-nav")}window.addEventListener("scroll",addFixedHeader);
+//# sourceMappingURL=all.js.map

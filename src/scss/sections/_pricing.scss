@@ -1,0 +1,133 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* ======================================
+         pricing cards section
+====================================== */
+
+.price-plans {
+  background-color: #ececec;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 40px;
+    .card {
+      background-color: White;
+      border-radius: 3px;
+      padding: 15px 0;
+      box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+      position: relative;
+      z-index: 1;
+      @include media-breakpoint-up(xl) {
+        &:nth-last-of-type(2) {
+          transform: translateY(-20px);
+        }
+      }
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 50%;
+        transition: 0.5s ease-in-out;
+        background-color: rgb(0 0 0 / 5%);
+        z-index: -1;
+      }
+
+      &:before {
+        top: 0;
+        left: 0;
+      }
+      &:after {
+        top: 50%;
+        right: 0;
+      }
+      &:hover:after,
+      &:hover:before {
+        width: 100%;
+      }
+      .popular {
+        display: block;
+        position: absolute;
+        top: 50px;
+        right: -20px;
+        color: white;
+        background-color: var(--main-service-color);
+        font-size: 15px;
+        letter-spacing: 1px;
+        font-weight: 700;
+        padding: 10px;
+        width: 135px;
+        text-transform: capitalize;
+        transform: rotate(-90deg);
+        text-align: right;
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 96px;
+          border-style: solid;
+          border-color: transparent transparent transparent white;
+          border-width: 20px;
+        }
+      }
+      .price {
+        padding: 20px;
+        text-align: center;
+        .title {
+          color: black;
+          font-size: 24px;
+        }
+        .subtitle {
+          color: #777;
+          font-weight: 400;
+        }
+        i,
+        span {
+          color: var(--main-service-color);
+        }
+        i {
+          font-size: 64px;
+        }
+        span {
+          display: block;
+          font-size: 48px;
+          margin: 20px 0 10px;
+          font-weight: 700;
+        }
+      }
+      .plan-details {
+        li {
+          border-top: 1px solid #e6e6e7;
+          padding: 20px 20px 20px 40px;
+          text-transform: capitalize;
+          &::before {
+            font-family: "Font Awesome 5 Free";
+            content: "\f00c";
+            font-weight: 900;
+            color: var(--main-service-color);
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    button {
+      background-color: transparent;
+      border: 2px solid var(--main-service-color);
+      border-radius: 6px;
+      margin: 20px auto;
+      display: block;
+      padding: 13px 20px;
+      color: var(--main-service-color);
+      cursor: pointer;
+      transition: 0.5s ease-in-out;
+      &:hover {
+        color: white;
+        background-color: var(--main-service-color);
+      }
+    }
+  }
+}

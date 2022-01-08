@@ -1,0 +1,89 @@
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+) !default;
+// scss-docs-end grid-breakpoints
+
+/* ==========
+     Globals 
+   ==========*/
+
+$mainTransition: 0.3s ease-in-out;
+$fasterTransition: 0.1s ease-in-out;
+$contentMargin: 100px;
+
+// responsive typography
+:root {
+  --biggest-font-size: 24px;
+  --h2-font-size: 20px;
+  --h3-font-size: 18px;
+  --normal-font-size: 15px;
+  --small-font-size: 12px;
+  --smaller-font-size: 14px;
+
+  @media (min-width: 991px) {
+    --biggest-font-size: 36px;
+    --h2-font-size: 28px;
+    --h3-font-size: 20px;
+    --normal-font-size: 18px;
+    --small-font-size: 16px;
+    --smaller-font-size: 14px;
+  }
+
+  --section-padding: 75px;
+  --mb-8: 8px;
+  --mb-12: 12px;
+  --mb-16: 16px;
+  --mb-24: 24px;
+  --mb-32: 32px;
+  --mb-64: 64px;
+  --mb-100: 100px;
+  // colors
+  /*   --main-color: #ffb566;
+ */
+  --title-color: #262626;
+  --body-color: #fcfcfc;
+  --text-color: #595959;
+  --text-color-light: #8b8a8a;
+  --button-color: #2b2b2b;
+  --button-color-alt: #363636;
+  --button-color-2: #bfbfbf;
+  --border-color: #f1f1f1;
+  --box-color: #fff;
+  --cart-color: #1c1c1c;
+  --btn-box-shadow: 3px 3px 2px rgb(241, 239, 239);
+  --card-box-shadow: 0px 0px 5px -1px #616161;
+  // social brand colors
+  --facebook-clr: #1877f2;
+  --google-clr: #ea4335;
+  --twitter-clr: #1da1f2;
+  --github-clr: #333;
+  --insta-clr: #c13584;
+  --behance-clr: #1769ff;
+  --dribble-clr: #ea4c89;
+  --linkedin-clr: #0077b5;
+  --pin-clr: #e60023;
+  --socials-clr: #88c1cf;
+  --youtube-clr: #ff0000;
+  --footer-clr: #b7e3b9;
+}
+
+// theme
+
+// night mode colors
+.dark__mode {
+  --body-color: #1f1f1f;
+  --title-color: #f2f2f2;
+  --text-color: #f2f2f2;
+  --main-color: #ffb566;
+  --text-color-light: #8b8a8a;
+  --button-color: #3d3d3d;
+  --border-color: #333;
+  --box-color: #292929;
+  --cart-color: #3c3c3c;
+}

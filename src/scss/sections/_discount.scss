@@ -1,0 +1,103 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* ======================================
+Discounts section
+====================================== */
+
+.discount {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+    gap: 35px;
+  }
+  h2 {
+    text-align: center;
+    font-size: 36px;
+  }
+  .discount-details {
+    background-image: url("../../../dist/assets/img/discount-background1.jpg");
+    background-size: cover;
+    @extend %flex-center;
+    flex-direction: column;
+    flex-basis: 50%;
+    color: white;
+    padding: 100px 50px;
+    text-align: center;
+    position: relative;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+    animation: change-backgrounds 10s linear infinite;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgb(154 6 128 / 96%);
+    }
+    .content {
+      z-index: 3;
+
+      img {
+        margin-top: 50px;
+        max-width: 250px;
+        @include media-breakpoint-down(md) {
+          max-width: 150px;
+        }
+      }
+    }
+  }
+  form {
+    flex-basis: 50%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    h2 {
+      color: black;
+    }
+
+    .input,
+    textarea {
+      border-radius: 2px;
+      padding: 15px;
+      border: transparent;
+      border-bottom: 1px solid #dfdddd;
+      background-color: #fafafa;
+      width: 275px;
+      margin: 8px auto;
+      text-transform: capitalize;
+      caret-color: var(--main-service-color);
+      &:focus {
+        outline: none;
+        &::placeholder {
+          color: transparent;
+        }
+      }
+    }
+    textarea {
+      height: 150px;
+    }
+    input[type="submit"] {
+      margin: auto;
+      margin-top: 15px;
+      color: white;
+      background-color: var(--main-service-color);
+      padding: 10px;
+      cursor: pointer;
+      transition: 0.5s ease-in-out;
+      &:hover {
+        color: var(--main-service-color);
+        background-color: white;
+        border: 2px solid var(--main-service-color);
+      }
+    }
+  }
+}

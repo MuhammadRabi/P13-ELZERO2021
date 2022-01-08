@@ -1,0 +1,52 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* ======================================
+              start hero area
+   ====================================== */
+
+.hero {
+  position: relative;
+  .container {
+    height: calc(100vh - 62px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    @include media-breakpoint-down(xl) {
+      flex-direction: column;
+    }
+    main {
+      h1 {
+        font-size: 48px;
+        text-transform: capitalize;
+        color: #000;
+      }
+      p {
+      }
+    }
+    figure {
+      img {
+        position: relative;
+        width: 500px;
+        animation: up-and-down 5s linear infinite;
+        @include media-breakpoint-down(md) {
+          width: 300px;
+        }
+      }
+    }
+  }
+
+  .go-down {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    i {
+      font-size: 32px;
+      color: var(--main-service-color);
+      animation: bouncing 1.5s infinite;
+    }
+  }
+}

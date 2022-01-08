@@ -1,0 +1,74 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* ======================================
+      gallery boxes with flash animation
+   ====================================== */
+
+.gallery {
+  background-color: #e6e6e7;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    .box {
+      padding: 10px;
+      background-color: white;
+      box-shadow: 0px 12px 20px 0px rgb(0 0 0 /13%),
+        0px 2px 4px 0px rgb(0 0 0 / 12%);
+      position: relative;
+      figure {
+        position: relative;
+        overflow: hidden;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 0;
+          height: 0;
+          background-color: rgb(255 255 255/ 20%);
+          z-index: 2;
+        }
+        &:hover:before {
+          animation: flashing 0.7s;
+        }
+        img {
+          max-width: 100%;
+          transition: $mainTransition;
+        }
+        &:hover img {
+          transform: rotate(2deg) scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.price-plans,
+.works,
+.articles,
+.stats,
+.services,
+.news,
+.testimonial,
+.gallery,
+.skills {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.section-title {
+  border: 2px solid #000;
+  width: fit-content;
+  margin: 5px auto 75px;
+  border-radius: 2px;
+  color: #000;
+  padding: 10px 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

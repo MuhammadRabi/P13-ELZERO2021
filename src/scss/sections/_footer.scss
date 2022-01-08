@@ -1,0 +1,98 @@
+/* ===================================
+    start footer section 
+    =================================== */
+
+footer {
+  padding: 50px 0;
+  background-color: #191919;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    .logo {
+      .main-logo {
+        font-size: 48px;
+        font-weight: 900;
+        letter-spacing: 3px;
+        color: #fff;
+      }
+      .socials {
+        display: flex;
+        justify-content: flex-start;
+        a {
+          border-radius: 2px;
+          &:not(:first-of-type) {
+            margin-left: 15px;
+          }
+          i {
+            border-radius: 2px;
+            font-size: 24px;
+            color: #777;
+            background-color: #333;
+            padding: 10px;
+            transition: 0.5s ease-in-out;
+          }
+          &:hover i {
+            color: #fff;
+          }
+          &:hover:nth-of-type(1) i {
+            background-color: var(--facebook-clr);
+          }
+          &:hover:nth-of-type(2) i {
+            background-color: var(--twitter-clr);
+          }
+          &:hover:nth-of-type(3) i {
+            background-color: var(--youtube-clr);
+          }
+        }
+      }
+    }
+    .links {
+      li {
+        padding: 13px 30px;
+        &:not(:last-of-type) {
+          border-bottom: 1px solid #4a4949;
+        }
+        a {
+          color: #b7b3b3;
+          position: relative;
+          transition: 0.2s ease-in-out;
+          &:before {
+            font-family: "Font Awesome 5 Free";
+            content: "\f101";
+            font-weight: 900;
+            color: var(--main-service-color);
+            margin-right: 10px;
+            position: absolute;
+            left: -25px;
+          }
+        }
+        &:hover a {
+          color: white;
+          transform: translateX(10px);
+        }
+      }
+    }
+    .contact {
+      .info-line {
+        display: flex;
+        align-items: center;
+        i {
+          color: var(--main-service-color);
+        }
+        p {
+          color: #b7b3b3;
+          padding: 10px 0;
+          margin-left: 15px;
+        }
+      }
+    }
+    .pix {
+      img {
+        margin: 2px;
+        border: 3px solid white;
+        width: 75px;
+      }
+    }
+  }
+}
