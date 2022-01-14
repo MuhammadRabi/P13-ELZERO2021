@@ -216,7 +216,7 @@ header .container nav .nav__list .nav__item .nav__link {
   position: relative;
   transition: 0.2s ease-in-out;
 }
-header .container nav .nav__list .nav__item .nav__link:hover {
+header .container nav .nav__list .nav__item .nav__link:hover, header .container nav .nav__list .nav__item .nav__link.active {
   color: var(--main-service-color);
 }
 header .container nav .nav__list .nav__item .nav__link:before {
@@ -236,8 +236,26 @@ header .container nav .nav__list .nav__item .nav__link:after {
   background-color: rgba(0, 0, 0, 0.01);
   z-index: -1;
 }
-header .container nav .nav__list .nav__item .nav__link:hover:after, header .container nav .nav__list .nav__item .nav__link:hover:before {
+header .container nav .nav__list .nav__item .nav__link:hover:after, header .container nav .nav__list .nav__item .nav__link:hover:before, header .container nav .nav__list .nav__item .nav__link.active:before, header .container nav .nav__list .nav__item .nav__link.active:after {
   width: 100%;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  cursor: pointer;
+  color: white;
+  background-color: var(--main-service-color);
+  border-radius: 2px;
+  padding: 7px 10px;
+  font-size: 24px;
+  display: none;
+  z-index: 999;
+  transition: 0.3s ease-in-out;
+}
+.scroll-to-top.show-scroll-btn {
+  display: block;
 }
 
 /* ======================================
@@ -988,8 +1006,9 @@ latest news section
   top: 0;
   left: 0;
   height: 100%;
-  width: 30%;
+  width: 0;
   background-color: var(--main-service-color);
+  transition: 0.3s ease-in-out;
 }
 
 /* ===================================

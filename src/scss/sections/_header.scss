@@ -45,7 +45,8 @@ header {
             padding: 0 25px;
             position: relative;
             transition: 0.2s ease-in-out;
-            &:hover {
+            &:hover,
+            &.active {
               color: var(--main-service-color);
             }
             &:before {
@@ -68,12 +69,32 @@ header {
               z-index: -1;
             }
             &:hover:after,
-            &:hover:before {
+            &:hover:before,
+            &.active:before,
+            &.active:after {
               width: 100%;
             }
           }
         }
       }
     }
+  }
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  cursor: pointer;
+  color: white;
+  background-color: var(--main-service-color);
+  border-radius: 2px;
+  padding: 7px 10px;
+  font-size: 24px;
+  display: none;
+  z-index: 999;
+  transition: 0.3s ease-in-out;
+  &.show-scroll-btn {
+    display: block;
   }
 }
