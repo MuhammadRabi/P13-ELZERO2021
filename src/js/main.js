@@ -1,3 +1,12 @@
+const navToggle = document.querySelector(".nav-toggle");
+const navList = document.querySelector(".nav__list");
+
+const addMobileNav = () => {
+  navToggle.classList.toggle("active");
+  navList.classList.toggle("active");
+};
+
+navToggle.addEventListener("click", addMobileNav);
 // scroll to top button
 
 let scrollBtn = document.querySelector(".scroll-to-top");
@@ -46,6 +55,9 @@ let scrollSpy = () => {
     if (top > offset && top < offset + height) {
       navLinks.forEach((link) => {
         link.classList.remove("active");
+        navToggle.classList.remove("active");
+        navList.classList.remove("active");
+
         document
           .querySelector(`.nav__link[href*=${id}]`)
           .classList.add("active");
